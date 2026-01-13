@@ -1,0 +1,12 @@
+services:
+  webserver:
+    networks:
+      - default
+      - lti-network
+  db:
+    networks:
+      - default
+
+networks:
+  lti-network:
+    external: true
