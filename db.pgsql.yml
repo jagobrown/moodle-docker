@@ -8,3 +8,8 @@ services:
       POSTGRES_USER: moodle
       POSTGRES_PASSWORD: "m@0dl3ing"
       POSTGRES_DB: moodle
+    volumes:
+      - moodle-docker-pgsql-data:/var/lib/postgresql/data
+
+volumes:
+  moodle-docker-pgsql-data:
