@@ -9,7 +9,16 @@ printenv
 
 # Set below if absent
 export MOODLE_DOCKER_WWWROOT=./MOODLE_LTS
+export MOODLE_DOCKER_WWWROOT=/home/jago/repos/moodle-docker/MOODLE_LTS
+
 export MOODLE_DOCKER_DB=pgsql
+
+
+Way to resolve this:
+Git: unable to create file ssl/certs/server.crt: Perission denied
+
+sudo chown -R $USER:$USER /home/jago/repos/moodle-docker/ssl/
+
 
 # Check compose version
 docker compose version
@@ -23,7 +32,7 @@ bin/moodle-docker-compose up -d
 bin/moodle-docker-compose stop
 
 bin/moodle-docker-compose start
-bin/moodle-docker-compose stop
+
 
 # Remove the postgres volume (this will DELETE all database data)
 # or whatever your volume name is if different
